@@ -18,23 +18,6 @@ function ThemeWrapper() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Criar usuário de teste se não existir
-    const createTestUser = async () => {
-      try {
-        const { error } = await supabase.auth.signUp({
-          email: 'chaves@admin.com',
-          password: '123456',
-        });
-        if (error && !error.message.includes('already registered')) {
-          console.error('Erro ao criar usuário de teste:', error);
-        }
-      } catch (error) {
-        console.error('Erro ao criar usuário de teste:', error);
-      }
-    };
-
-    createTestUser();
-
     // Set up auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {

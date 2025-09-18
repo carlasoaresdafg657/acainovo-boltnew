@@ -1,0 +1,2 @@
+-- Este é um comando para gerar os tipos TypeScript
+-- Os tipos serão gerados automaticamente pelo Supabase
